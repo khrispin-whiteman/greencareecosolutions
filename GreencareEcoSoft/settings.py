@@ -25,7 +25,7 @@ SECRET_KEY = '5g&4@)=76dx^gf8i)%wr(aa%2(5%f8gepimqm-t6tp)chkg%!='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ecogreencaresolutions.pythonanywhere.com',]
 
 
 # Application definition
