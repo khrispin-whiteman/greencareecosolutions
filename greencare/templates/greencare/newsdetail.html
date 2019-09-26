@@ -1,0 +1,33 @@
+{% extends 'greencare/base.html' %}
+
+{% block title %}{{ newsdetail.newsheading }}{% endblock %}
+
+{% block content %}
+    <div id="breadcrumb">
+		<div class="container">
+			<div class="breadcrumb">
+				<li><a href="#">Back</a></li>
+				<li>{{ newsdetail.newsheading }}</li>
+			</div>
+		</div>
+	</div>
+
+    <div class="container">
+			<div class="text-center">
+				<h2>{{ newsdetail.newsheading }}</h2>
+			</div>
+            {% if newsdetail %}
+
+                {% if newsdetail.newspicture %}
+                    <img src="{{ newsdetail.newspicture.url }}" width="370px" height="370px">
+                    {% else %}
+
+                {% endif %}
+                {{ newsdetail.newscontent | safe }}
+                {% else %}
+                    <p>News Does Not Exist!</p>
+            {% endif %}
+		</div>
+
+
+{% endblock %}

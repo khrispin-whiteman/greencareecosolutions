@@ -1,0 +1,84 @@
+{% extends 'greencare/base.html' %}
+
+{% block content %}
+    	<section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2 class="animation animated-item-1"><span>Greencare Eco Solutions Limited</span></h2>
+                                    <p class="animation animated-item-2" style="color: #2b542c">Eco Innovation at its best.</p>
+                                    <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                                </div>
+               <div class="headder-top">
+      </div>                   </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="../../static/greencare/images/slider/1.png" width="500px" class="img-responsive">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+    </section><!--/#main-slider-->
+
+
+
+    	<div class="lates">
+		<div class="container">
+			<div class="text-center">
+				<h2>Latest News</h2>
+			</div>
+
+            {% for n in news reversed %}
+			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                {% if n.newspicture %}
+                        <div class="pic"><img src="{{ n.newspicture.url }}" alt="{{ n.newsheading }}" class="img-responsive"></div>
+                {% endif %}
+				<h3>{{ n.newsheading }}</h3>
+				<p>{{ n.newscontent | safe | truncatewords:15  }}</p>
+                <a href="/newslist/{{ n.id }}/"><button class="btn btn-success btn-sm">Read More</button></a>
+			</div>
+                {% empty %}
+                    <p>No news Found!</p>
+            {% endfor %}
+
+		</div>
+
+            <br><br>
+            <hr>
+            <center><a href="{% url 'newslist' %}"><button class="btn btn-primary btn-lg">Read More News Here...</button></a></center>
+            <hr>
+
+	</div>
+
+
+    <section id="conatcat-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="media contact-info wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="pull-left">
+                            {% for c in contactus %}
+                                <a href="tel://{{ c.phone }}">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <div class="media-body">
+                            <h2>Have a question or need to make an inquiry?</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation +0123 456 70 80</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.container-->
+    </section><!--/#conatcat-info-->
+{% endblock %}

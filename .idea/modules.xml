@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../PycharmProjects/ECOMMERCE/.idea/ECOMMERCE.iml" filepath="$PROJECT_DIR$/../../PycharmProjects/ECOMMERCE/.idea/ECOMMERCE.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/FbChatbot/.idea/FbChatbot.iml" filepath="$USER_HOME$/PycharmProjects/FbChatbot/.idea/FbChatbot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GreencareEcoSoft.iml" filepath="$PROJECT_DIR$/.idea/GreencareEcoSoft.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/Try/.idea/Try.iml" filepath="$USER_HOME$/PycharmProjects/Try/.idea/Try.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,77 @@
+{% extends 'greencare/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+    <div id="breadcrumb">
+		<div class="container">
+			<div class="breadcrumb">
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li>Contact</li>
+			</div>
+		</div>
+	</div>
+
+
+    <div class="map"><div><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=wilsons%20guest%20house%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">pureblack.de</a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+
+    <div class="container">
+    <br><br>
+    <div class="row">
+        <div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row row-pb-md">
+				<div class="col-md-6 animate-box">
+					<h3></h3>
+					<form action="" method="post" style="color: black">
+                        <h2>Write To Us:</h2><hr>
+                        {%csrf_token%}
+                        {% for error in form.non_field_errors %}
+                        <div class="form-group has-errors text-danger small">
+                            {{error}}
+                        </div>
+                        {% endfor %}
+                        {% for field in form %}
+                            <div class="form-group has-errors text-danger small">
+                                {{field.errors}}
+                            </div>
+                            <div class="form-group has-errors text-danger small">
+                            </div>
+                            <div class="form-group">
+                                {{ field.label_tag }}<br>
+                                <p style="color: white">{{field}}</p>
+                            </div>
+                        {% endfor %}
+                        <button class="btn btn-primary">Send Message</button>
+                    </form>
+
+				</div>
+				<div class="col-md-5 col-md-push-1 animate-box">
+
+					<div class="gtco-contact-info">
+						<h3>Contact Information</h3>
+                        {% for c in contactus %}
+                            <ul>
+                                <li class="address">Kabwe, <br> Kabwe</li>
+                                <li class="phone"><a href="tel://{{ c.phone }}">Tel: {{ c.phone }}</a></li>
+                                <li class="email"><a href="mailto:{{ c.email }}">Email: {{ c.email }}</a></li>
+                            </ul>
+                        {% endfor %}
+					</div>
+
+
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+	
+
