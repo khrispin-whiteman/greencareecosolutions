@@ -1,10 +1,11 @@
 {% extends 'greencare/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <section id="main-slider" class="no-margin">
         <div class="carousel slide">
             <div class="carousel-inner">
-                <div class="item active" style="background-image: url(images/slider/bg1.jpg)">
+                <div class="item active" style="background-image: {% static 'agriculture/images/bg1.jpg' %}">
                     <div class="container">
                         <div class="row slide-margin">
                             <div class="col-sm-6">
@@ -32,6 +33,38 @@
             </div><!--/.carousel-inner-->
         </div><!--/.carousel-->
     </section><!--/#main-slider-->
+
+    <div class="feature">
+		<div class="container">
+			<div class="text-center">
+                <h2>Our Major Services</h2>
+				<div class="col-md-3">
+					<div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" >
+						<i class="fa fa-globe"></i>
+						<h2>Web Development</h2>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" >
+						<i class="fa fa-laptop"></i>
+						<h2>Desktop Apps Development</h2>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" >
+						<i class="fa fa-pencil"></i>
+						<h2>Logo Design</h2>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="hi-icon-wrap hi-icon-effect wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" >
+						<i class="fa fa-barcode"></i>
+						<h2>Barcode Selling</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
     <div>
         WHATS HOT?

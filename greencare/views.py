@@ -145,3 +145,16 @@ def agriculturehome(request):
     return render(request, 'agriculture/index.html', {
         'experience': experience,
     })
+
+def agricultureabout(request):
+    experience = Experience.objects.all()
+    return render(request, 'agriculture/about.html', {
+        'experience': experience,
+    })
+
+
+def agriculturecontactus(request):
+    experience = Experience.objects.all()
+    return render(request, 'agriculture/contact.html', {
+        'experience': experience,
+    })

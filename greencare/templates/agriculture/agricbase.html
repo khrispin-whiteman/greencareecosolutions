@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 
+    <link rel='icon' href='{% static 'greencare/images/greencare-icon.png' %}' type='image/png' size="16x16">
     <link href="{% static 'agriculture/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'agriculture/css/font-awesome.min.css' %}" rel="stylesheet">
     <link href="{% static 'agriculture/css/style.css' %}" rel='stylesheet' type='text/css' media="all">
@@ -12,41 +13,55 @@
     <link href="//fonts.googleapis.com/css?family=Poiret+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Mada:200,300,400,500,600,700,900&amp;subset=arabic" rel="stylesheet">
 
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
 
 
 </head>
 <body>
 {% block navbar %}
-    <div class="headder-top">
-        <!-- nav -->
-        <nav >
-          <div id="logo">
-            <h1><a href="{% url 'agriculturehome' %}">Greencare Agro</a></h1>
-          </div>
-          <label for="drop" class="toggle">Menu</label>
-          <input type="checkbox" id="drop">
-          <ul class="menu mt-2">
-            <li class="active"><a href="{% url 'agriculturehome' %}">Home</a></li>
-            <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="about.html">About</a></li>
-            <li><a href="#">Agro Services</a></li>
-              <li><a href="{% url 'index' %}">Software</a></li>
-            <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
-              <!-- First Tier Drop Down -->
-              <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
-              </label>
-              <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-              <input type="checkbox" id="drop-2">
-              <ul>
-                <li><a href="#" class="drop-text">Gallery</a></li>
-                <li><a href="#" class="drop-text">Blog</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
-        <!-- //nav -->
+    <div class="header-outs inner_page-banner " id="home">
+        <div class="headder-top">
+            <!-- nav -->
+            <nav>
+                <div id="logo">
+                    <h1><a href="{% url 'agriculturehome' %}">Greencare Agro</a></h1>
+                </div>
+                <label for="drop" class="toggle">Menu</label>
+                <input type="checkbox" id="drop">
+                <ul class="menu mt-2">
+                    <li class="active"><a href="{% url 'agriculturehome' %}">Home</a></li>
+                    <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{% url 'agricultureabout' %}">About</a></li>
+                    <li><a href="#">Agro Services</a></li>
+                    <li><a href="{% url 'index' %}">Software</a></li>
+                    <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                        <!-- First Tier Drop Down -->
+                        <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down"
+                                                                                   aria-hidden="true"></span>
+                        </label>
+                        <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                        <input type="checkbox" id="drop-2">
+                        <ul>
+                            <li><a href="#" class="drop-text">Gallery</a></li>
+                            <li><a href="#" class="drop-text">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'agriculturecontactus' %}">Contact Us</a></li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
     </div>
 {% endblock %}
+
+
 
 {% block content %}
 {% endblock %}
@@ -57,7 +72,7 @@
      <footer class="py-lg-4 py-md-3 py-sm-3 py-3">
       <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
         <div class="footer-w3layouts-head text-center">
-          <h2><a href="index.html">Greencare Agro</a></h2>
+          <h2><a href="{% url 'index' %}">Greencare Agro</a></h2>
         </div>
         <div class="social-icons mt-lg-5 mt-md-4 mt-3 text-center">
           <ul>

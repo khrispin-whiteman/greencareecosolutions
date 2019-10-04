@@ -13,5 +13,7 @@ urlpatterns = [
     path('newslist/<int:news_id>/', views.newsdetail, name='newsdetail'),
 
     #agriculture
-    path('agriculturehome/', views.agriculturehome, name='agriculturehome')
+    path('agriculturehome/', views.agriculturehome, name='agriculturehome'),
+    path('agricultureabout/', views.agricultureabout, name='agricultureabout'),
+    path('agriculturecontactus/', views.agriculturecontactus, name='agriculturecontactus'),
 ]

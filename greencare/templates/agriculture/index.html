@@ -7,17 +7,39 @@
 {% extends 'agriculture/agricbase.html' %}
 {% load staticfiles %}
 
+{% block title %}Greencare Agro{% endblock %}
 
-    <script>
-      addEventListener("load", function () {
-      	setTimeout(hideURLbar, 0);
-      }, false);
-      
-      function hideURLbar() {
-      	window.scrollTo(0, 1);
-      }
-    </script>
-    <!--//meta tags ends here-->
+{% block navbar %}
+    <div class="headder-top">
+        <!-- nav -->
+        <nav >
+          <div id="logo">
+            <h1><a href="{% url 'agriculturehome' %}">Greencare Agro</a></h1>
+          </div>
+          <label for="drop" class="toggle">Menu</label>
+          <input type="checkbox" id="drop">
+          <ul class="menu mt-2">
+            <li class="active"><a href="{% url 'agriculturehome' %}">Home</a></li>
+            <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{% url 'agricultureabout' %}">About</a></li>
+            <li><a href="#">Agro Services</a></li>
+              <li><a href="{% url 'index' %}">Software</a></li>
+            <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+              <!-- First Tier Drop Down -->
+              <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+              </label>
+              <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+              <input type="checkbox" id="drop-2">
+              <ul>
+                <li><a href="#" class="drop-text">Gallery</a></li>
+                <li><a href="#" class="drop-text">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'agriculturecontactus' %}">Contact Us</a></li>
+          </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+{% endblock %}
 
 {% block content %}
       <body>
