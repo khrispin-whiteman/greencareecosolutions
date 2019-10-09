@@ -1,12 +1,13 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect, get_object_or_404
-from greencare.forms import commentsForm, ServiceDealsForm
-from greencare.models import Ourteam, ContactDetails, News, ServicesDeals, TermsAndConditions, Service, Experience
+from greencare.forms import contactUsForm, ServiceDealsForm
+from greencare.models import Ourteam, ContactDetails, Article, ServicesDeals, TermsAndConditions, Service, Experience, \
+    WhyChooseOurAgroServices, AgroService
 
 
 def index(request):
     contactus = ContactDetails.objects.all()
-    news = News.objects.all()[:3]
+    news = Article.objects.all()[:3]
     return render(request, 'greencare/index.html', {
         'contactus': contactus,
         'news': news,
@@ -94,25 +95,27 @@ def service_detail(request, slug):
 
 def contactus(request):
     contactus = ContactDetails.objects.all()
-
+    form = contactUsForm()
     if request.method == 'POST':
-        addCommentForm = commentsForm(request.POST)
+        addCommentForm = contactUsForm(request.POST)
         if addCommentForm.is_valid():
             # Create a new user object but avoid saving it yet
             add_comment = addCommentForm.save(commit=False)
             add_comment.save()
 
             # return redirect('adminresults')
-            return HttpResponse('Thank You For Your Message!')
+            return render(request, 'greencare/contact.html', {
+                'contactus': contactus,
+                'form': form,
+                'success': 'success',
+            })
         else:
-            form = commentsForm()
             return render(request, 'greencare/contact.html',
                           {
                               'contactus': contactus,
                               'form': form,
                           })
 
-    form = commentsForm()
     return render(request, 'greencare/contact.html', {
         'contactus': contactus,
         'form': form,
@@ -120,7 +123,7 @@ def contactus(request):
 
 
 def newslist(request):
-    news = News.objects.all()
+    news = Article.objects.all()
     return render(request, 'greencare/newslist.html',
                   {
                       'news': news,
@@ -128,11 +131,11 @@ def newslist(request):
 
 
 def newsdetail(request, news_id):
-    news = News.objects.all()
+    news = Article.objects.all()
 
     try:
-        newsdetail = News.objects.get(pk=news_id)
-    except News.DoesNotExist:
+        newsdetail = Article.objects.get(pk=news_id)
+    except Article.DoesNotExist:
         raise Http404("News does not exist!")
     return render(request, 'greencare/newsdetail.html',
                   {
@@ -142,19 +145,26 @@ def newsdetail(request, news_id):
 
 def agriculturehome(request):
     experience = Experience.objects.all()
+    whychooseouragroservices = WhyChooseOurAgroServices.objects.all()
+    agroservices = AgroService.objects.all()
     return render(request, 'agriculture/index.html', {
         'experience': experience,
+        'whychooseouragroservices': whychooseouragroservices,
+        'agroservices': agroservices,
     })
+
 
 def agricultureabout(request):
     experience = Experience.objects.all()
+    whychooseouragroservices = WhyChooseOurAgroServices.objects.all()
     return render(request, 'agriculture/about.html', {
         'experience': experience,
+        'whychooseouragroservices': whychooseouragroservices,
     })
 
 
 def agriculturecontactus(request):
-    experience = Experience.objects.all()
+    contactus = ContactDetails.objects.all()
     return render(request, 'agriculture/contact.html', {
-        'experience': experience,
+        'contactus': contactus,
     })

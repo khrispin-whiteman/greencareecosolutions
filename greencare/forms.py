@@ -1,22 +1,22 @@
 from django.forms import ModelForm
 from django import forms
-from froala_editor.fields import FroalaField
 from froala_editor.widgets import FroalaEditor
+from greencare.models import ContactUs, ServicesDeals, Service
 
-from greencare.models import Comment, ServicesDeals, Service
 
-
-class commentsForm(ModelForm):
+class contactUsForm(ModelForm):
     name = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Full Name',}))
     email = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Email Address',}))
+    phone = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number with country code',}))
 
     message = forms.CharField(widget=forms.Textarea)
 
     class Meta:
-        model = Comment
-        fields = ('name', 'email', 'message', )
+        model = ContactUs
+        fields = ('name', 'email', 'phone', 'message', )
 
 
 class ServiceDealsForm(ModelForm):

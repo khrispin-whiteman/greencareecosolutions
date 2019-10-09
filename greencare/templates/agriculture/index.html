@@ -6,6 +6,7 @@
   -->
 {% extends 'agriculture/agricbase.html' %}
 {% load staticfiles %}
+{% load fontawesome_5 %}
 
 
 {% block title %}Greencare Agro{% endblock %}
@@ -13,327 +14,244 @@
 {% block navbar %}
     <div class="headder-top">
         <!-- nav -->
-        <nav >
-          <div id="logo">
-            <h1><a href="{% url 'agriculturehome' %}">Greencare Agro</a></h1>
-          </div>
-          <label for="drop" class="toggle">Menu</label>
-          <input type="checkbox" id="drop">
-          <ul class="menu mt-2">
-            <li class="active"><a href="{% url 'agriculturehome' %}">Home</a></li>
-            <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{% url 'agricultureabout' %}">About</a></li>
-            <li><a href="#">Agro Services</a></li>
-              <li><a href="{% url 'index' %}">Software</a></li>
-            <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
-              <!-- First Tier Drop Down -->
-              <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
-              </label>
-              <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-              <input type="checkbox" id="drop-2">
-              <ul>
-                <li><a href="#" class="drop-text">Gallery</a></li>
-                <li><a href="#" class="drop-text">Blog</a></li>
-              </ul>
-            </li>
-            <li><a href="{% url 'agriculturecontactus' %}">Contact Us</a></li>
-          </ul>
+        <nav>
+            <div id="logo">
+                <h1><a href="{% url 'agriculturehome' %}">Greencare Agro</a></h1>
+            </div>
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop">
+            <ul class="menu mt-2">
+                <li class="active"><a href="{% url 'agriculturehome' %}">Home</a></li>
+                <li class="mx-lg-3 mx-md-2 my-md-0 my-1"><a href="{% url 'agricultureabout' %}">About</a></li>
+                <li><a href="#">Agro Services</a></li>
+                <li><a href="{% url 'index' %}">Software</a></li>
+                <li class="mx-lg-3 mx-md-2 my-md-0 my-1">
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down"
+                                                                               aria-hidden="true"></span>
+                    </label>
+                    <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <input type="checkbox" id="drop-2">
+                    <ul>
+                        <li><a href="#" class="drop-text">Gallery</a></li>
+                        <li><a href="#" class="drop-text">Blog</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'agriculturecontactus' %}">Contact Us</a></li>
+            </ul>
         </nav>
         <!-- //nav -->
     </div>
 {% endblock %}
 
 {% block content %}
-    <script data-cfasync='false' type='text/javascript' src='//p369301.clksite.com/adServe/banners?tid=369301_724246_0&tagid=9'></script>
+    <script data-cfasync='false' type='text/javascript'
+            src='//p369301.clksite.com/adServe/banners?tid=369301_724246_0&tagid=9'></script>
 
-      <body>
+    <body>
     <div class="main-top" id="home">
-      <!-- header -->
+        <!-- header -->
 
-      <!-- //header -->
-      <!-- banner -->
-      <div class="main-banner text-center">
-        <div class="container">
-          <div class="style-banner">
-            <h4 class="mb-2">Welcome to Greencare Agro Page</h4>
-            <h5>Offering Farming Solutions Worldwide
-            </h5>
-          </div>
-          <div class="two-demo-button mt-md-4 mt-3">
-            <p> Lorem ipsum dolor sit amet Lorem ipsum dolor sit ametLorem ipsum dolor sit amet Lorem ipsum dolor sit amet</p>
-          </div>
+        <!-- //header -->
+        <!-- banner -->
+        <div class="main-banner text-center">
+            <div class="container">
+                <div class="style-banner">
+                    <h4 class="mb-2">Welcome to Greencare Agro Page</h4>
+                    <h5>Offering Farming Solutions Worldwide
+                    </h5>
+                </div>
+                <div class="two-demo-button mt-md-4 mt-3">
+                    <p> Are you a startup Farm or you are an already existing Farm but would like some
+                        Professional farming advice/help/support?
+                        You are in the right place as we offer Professional farming assistance.</p>
+                </div>
 
+            </div>
         </div>
-      </div>
     </div>
     <!-- //banner -->
     <!-- about -->
     <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
-      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <div class="row">
-		 <div class="col-lg-6 about-imgs-txt">
-             <img src="{% static 'agriculture/images/1.jpg' %}" alt="news image" class="img-fluid">
-          </div>
-         <div class="col-lg-6 text-right about-two-grids">
-            <h3 class="title  mb-md-4 mb-sm-3 mb-3">About Greencare Agro </h3>
-            <div class="about-para-txt">
-              <p>sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, eiusmod tempor incididunt ut labore et consectetur adipiscing sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, eiusmod tempor incididunt ut labore et consectetur adipiscing</p>
-              <p class="mt-2">sed do eiusmod tempor incididunt ut Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, eiusmod tempor incididunt ut labore et consectetur adipiscing sed do eiusmod</p>
-            </div>
-            <div class="view-buttn mt-lg-5 mt-md-4 mt-3">
-              <a href="#" class=" scroll">Read More</a>
-            </div>
-          </div>
+        <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="row">
+                <div class="col-lg-6 about-imgs-txt">
+                    <img src="{% static 'agriculture/images/1.jpg' %}" alt="news image" class="img-fluid">
+                </div>
+                <div class="col-lg-6 text-right about-two-grids">
+                    <h3 class="title  mb-md-4 mb-sm-3 mb-3">About Greencare Agro </h3>
+                    <div class="about-para-txt">
+                        <p>Are you a startup Farm or you are an already existing Farm but would like some
+                            Professional farming advice/help/support?
+                            You are in the right place as we offer Professional farming assistance.</p>
+                    </div>
+                    <div class="view-buttn mt-lg-5 mt-md-4 mt-3">
+                        <a href="{% url 'agricultureabout' %}" class=" scroll">Read More</a>
+                    </div>
+                </div>
 
+            </div>
         </div>
-      </div>
     </section>
     <!-- //about -->
-	<section class="blog_w3ls pb-5" id="why">
-		<div class="container pb-xl-5 pb-lg-3">
-			<h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Why Choose Us</h3>
-			<div class="row">
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html">
-								<img class="card-img-bottom" src="../../static/agriculture/images/g1.jpg" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Quality Products
-								</h5>
-								<div class="blog_w3icon">
+    <section class="blog_w3ls pb-5" id="why">
+        <div class="container pb-xl-5 pb-lg-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Why Choose Us</h3>
+            <div class="row">
+                <!-- blog grid -->
+                {% for whyus in whychooseouragroservices %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card border-0 med-blog">
+                            <div class="card-header p-0">
+                                <a href="single.html">
+                                    <img class="card-img-bottom" src="{{ whyus.picture.url }}"
+                                         alt="Card image cap">
+                                </a>
+                            </div>
+                            <div class="card-body border border-top-0">
+                                <div class="mb-3">
+                                    <h5 class="blog-title card-title m-0">
+                                        {{ whyus.heading }}
+                                    </h5>
+                                    <div class="blog_w3icon">
 									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html">
-								<img class="card-img-bottom" src="{% static 'agriculture/images/g2.jpg' %}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Work Smart
-								</h5>
-								<div class="blog_w3icon">
-									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-				<!-- blog grid -->
-				<div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
-					<div class="card border-0 med-blog">
-						<div class="card-header p-0">
-							<a href="single.html">
-								<img class="card-img-bottom" src="{% static 'agriculture/images/g3.jpg' %}" alt="Card image cap">
-							</a>
-						</div>
-						<div class="card-body border border-top-0">
-							<div class="mb-3">
-								<h5 class="blog-title card-title m-0">Excellent Services
-								</h5>
-								<div class="blog_w3icon">
-									<span>
-										Magna Kictum - loremipsum</span>
-								</div>
-							</div>
-							<p>Cras ultricies ligula sed magna dictum porta auris blandita.</p>
-						</div>
-					</div>
-				</div>
-				<!-- //blog grid -->
-			</div>
-		</div>
-	</section>
-    <!-- stats -->
-   <section class="stats-count py-lg-4 py-md-3 py-sm-3 py-3">
-      <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
-        <div class="row text-center">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info ">
-           <span class="fa fa-smile-o" data-blast="bgColor"></span>
-		   <h5>600</h5>
-            <h6 class="pt-2">Happy Customers</h6>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
-           <span class="fa fa-shield" data-blast="bgColor"></span>
-		   <h5>350 +</h5>
-            <h6 class="pt-2">Awards Win</h6>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
-            <span class="fa fa-leaf" data-blast="bgColor"></span>
-			<h5>250</h5>
-            <h6 class="pt-2">Products</h6>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
-            <span class="fa fa-thumbs-o-up" data-blast="bgColor"></span>
-			<h5>225</h5>
-            <h6 class="pt-2">Ratings</h6>
-          </div>
+									    {{ whyus.subheading }}
+                                    </span>
+                                    </div>
+                                </div>
+                                <p>
+                                    {{ whyus.detail | safe }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <br>
+            </div>
         </div>
-      </div>
+    </section>
+    <!-- stats -->
+    <section class="stats-count py-lg-4 py-md-3 py-sm-3 py-3">
+        <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info ">
+                    <span class="fa fa-smile-o" data-blast="bgColor"></span>
+                    <h5>600</h5>
+                    <h6 class="pt-2">Happy Customers</h6>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
+                    <span class="fa fa-shield" data-blast="bgColor"></span>
+                    <h5>350 +</h5>
+                    <h6 class="pt-2">Awards Win</h6>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
+                    <span class="fa fa-leaf" data-blast="bgColor"></span>
+                    <h5>250</h5>
+                    <h6 class="pt-2">Products</h6>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-6 number-w3three-info">
+                    <span class="fa fa-thumbs-o-up" data-blast="bgColor"></span>
+                    <h5>225</h5>
+                    <h6 class="pt-2">Ratings</h6>
+                </div>
+            </div>
+        </div>
     </section>
     <!--//stats -->
     <!-- service -->
     <section class="service py-lg-4 py-md-3 py-sm-3 py-3" id="service">
-      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Agro Services</h3>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-apple" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Garden Care </h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
+        <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Agro Services</h3>
+            <div class="row">
+                {% for agroservice in agroservices %}
+                    <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
+                        <div class="ser-Agriculture-grid">
+                            <div class="about-icon mb-md-4 mb-3">
+
+                                {% if agroservice.service_icon %}
+                                    {{ agroservice.service_icon.as_html | safe }}
+                                {% endif %}
+                            </div>
+                            <div class="ser-sevice-grid">
+                                <h4 class="pb-3">{{ agroservice.service_name }}</h4>
+                                <p>{{ agroservice.description | safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    No Agro Services Found...
+                {% endfor %}
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-skyatlas" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Plant Renovation</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-yelp" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Quality Products</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-4 mt-3 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-viadeo" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Always Fresh</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-4 mt-3 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-pagelines" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Garden Care</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-4 mt-3 service-grid-wthree text-center">
-            <div class="ser-Agriculture-grid">
-              <div class="about-icon mb-md-4 mb-3">
-                <span class="fa fa-leaf" aria-hidden="true"></span>
-              </div>
-              <div class="ser-sevice-grid">
-                <h4 class="pb-3">Plant Renovation</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
     <!-- //service -->
     <!-- client -->
     <section class="client py-lg-4 py-md-3 py-sm-3 py-3" id="client">
-      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Clients</h3>
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
-            <div class="mb-lg-4 mb-3 clients-ile-img">
-              <img src="../../static/agriculture/images/cc2.jpg" alt=" " class="img-fluid">
+        <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Clients</h3>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
+                    <div class="mb-lg-4 mb-3 clients-ile-img">
+                        <img src="../../static/agriculture/images/cc2.jpg" alt=" " class="img-fluid">
+                    </div>
+                    <div class="clients-color-ile text-center">
+                        <p>They visited me and gave me free 10 containers of their organic fertiliser
+                            and i can proudly happily testify that the results were to good to be true.
+                        </p>
+                        <div class="mt-3 clients-txt-ile">
+                            <h4>Jostone Mutondo</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
+                    <div class="mb-lg-4 mb-3 clients-ile-img">
+                        <img src="../../static/agriculture/images/cc1.jpg" alt=" " class="img-fluid">
+                    </div>
+                    <div class="clients-color-ile text-center">
+                        <p>Very good services
+                        </p>
+                        <div class="mt-3 clients-txt-ile">
+                            <h4>Njamba Kalimi</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="clients-color-ile text-center">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-              </p>
-              <div class="mt-3 clients-txt-ile">
-                <h4>Jack Will</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6 cilent-item text-center">
-            <div class="mb-lg-4 mb-3 clients-ile-img">
-              <img src="images/cc1.jpg" alt=" " class="img-fluid">
-            </div>
-            <div class="clients-color-ile text-center">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-              </p>
-              <div class="mt-3 clients-txt-ile">
-                <h4>Rose son</h4>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
     <!--//client -->
-	 <!-- collection -->
+    <!-- collection -->
     <section class="collection py-lg-4 py-md-3 py-sm-3 py-3">
-      <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
-        <h3 class="title mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Experience</h3>
-        <!--row -->
-          {% for exp in experince %}
-            <div class="row">
-              <div class="col-lg-7 col-md-6 collection-w3layouts">
-                <h4> {{ exp.heading | safe }} </h4>
-                <p class="mt-2">
-                    {{ exp.detail | safe }}
-                </p>
-                <div class="view-buttn mt-lg-4 mt-3">
-                  <a href="#" class="">Read More</a>
+        <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title mb-lg-5 mb-md-4 mb-sm-4 mb-3">Our Experience</h3>
+            <!--row -->
+            {% for exp in experience %}
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 collection-w3layouts">
+                        <h4> {{ exp.heading | safe }} </h4>
+                        <p class="mt-2">
+                            {{ exp.detail | safe }}
+                        </p>
+                        <div class="view-buttn mt-lg-4 mt-3">
+                            <a href="#" class="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <img src="{{ exp.imageattached.url }}" alt="news image" class="img-fluid">
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-5 col-md-6">
-                <img src="{{ exp.imageattached.url }}" alt="news image" class="img-fluid">
-              </div>
-            </div>
-              <div class=""><hr></div>
-          {% endfor %}
+                <div class="">
+                    <hr>
+                </div>
+            {% endfor %}
 
 
-        <!--// row -->
-      </div>
+            <!--// row -->
+        </div>
     </section>
     <!-- collection -->
 
     <!-- footer -->
 
     <!--//footer -->
-  </body>
+    </body>
 {% endblock %}

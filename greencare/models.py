@@ -1,4 +1,5 @@
 from django.db import models
+from fontawesome_5.fields import IconField
 from tinymce.models import HTMLField
 
 
@@ -17,18 +18,18 @@ class Ourteam(models.Model):
         verbose_name_plural = 'Our Team'
 
 
-class Comment(models.Model):
+class ContactUs(models.Model):
     name = models.CharField('Full Name', max_length=200, help_text='enter the full name')
     email = models.EmailField('Email Address', max_length=200)
-    # subject = models.CharField('Subject', max_length=500, )
+    phone = models.CharField('Phone Number', max_length=20, null=True, blank=True)
     message = models.TextField('Message', max_length=1000, )
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'User Comment'
-        verbose_name_plural = 'User Comments'
+        verbose_name = 'Contact Us'
+        verbose_name_plural = 'Contact Us'
 
 
 class ContactDetails(models.Model):
@@ -43,7 +44,7 @@ class ContactDetails(models.Model):
         verbose_name_plural = 'Our Contact Details'
 
 
-class News(models.Model):
+class Article(models.Model):
     newsheading = models.CharField('News Heading', max_length=1000, )
     newscontent = models.TextField(verbose_name='News Content', default='')
     newsdate = models.DateField(auto_now=True)
@@ -111,6 +112,7 @@ class SocialMediaProfiles(models.Model):
     def __str__(self):
         return self.mediaName + ' - ' + str(self.linkToProfile)
 
+
 class Experience(models.Model):
     heading = models.CharField('Title Of The Experience', max_length=200, null=True, blank=True, help_text='Optional')
     detail = models.TextField('The Actual Detailed Experience')
@@ -127,3 +129,32 @@ class Experience(models.Model):
 class AgroServices(models.Model):
     servicetitle = models.CharField('Service Title', max_length=200)
     servicedetail = models.TextField('Service Details')
+
+
+class WhyChooseOurAgroServices(models.Model):
+    picture = models.ImageField('Picture', max_length=1000, upload_to='why-choose-us/', help_text='preferably 640x420')
+    heading = models.CharField('Heading', max_length=200, )
+    subheading = models.CharField('Sub Heading', max_length=200, default='', null=True, blank=True)
+    detail = models.TextField('Detail', default='')
+
+    def __str__(self):
+        return self.heading
+
+
+class AgroService(models.Model):
+    service_icon = IconField()
+    service_name = models.CharField(max_length=200, verbose_name='Name Of Service',
+                                    help_text='enter the name of the service')
+    slug = models.SlugField(unique=True)
+    button_text = models.CharField('Button Text', max_length=200, default='Hire Us',
+                                   help_text='text to appear on the button')
+
+    description = models.TextField(verbose_name='News Content', default='')
+
+    class Meta:
+        verbose_name = 'Agro Service'
+        verbose_name_plural = 'Agro Services'
+        index_together = ('id', 'service_name')
+
+    def __str__(self):
+        return self.service_name
